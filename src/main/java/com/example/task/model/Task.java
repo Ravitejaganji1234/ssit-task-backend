@@ -22,6 +22,7 @@ public class Task {
     @Column (name="taskDetails")
     String taskDetails;
     @Temporal(TemporalType.DATE)
+    
     @Column (name ="effectiveDate")
     Date effectiveDate;
     @Temporal(TemporalType.DATE)

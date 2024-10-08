@@ -17,4 +17,5 @@ public interface TaskRepository {
     List<Task> getOverDueTasksPersonEmail(String email);
     List<Task> getPendingTasksPersonEmail(String email);
     List<Task> getCompletedTasksPersonEmail(String email);
+    HashMap<String, Integer> getTasksEfficiency(String email);
 }

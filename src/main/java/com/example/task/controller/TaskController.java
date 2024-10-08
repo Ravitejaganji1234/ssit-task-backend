@@ -95,6 +95,11 @@ public class TaskController {
     public List getCompletedTasksPersonEmail(@PathVariable String email) {
         return taskService.getCompletedTasksPersonEmail(email);
     }
+
+    @GetMapping("/TasksDetails/PersonEmail/{email}")
+    public HashMap<String,Integer> getTasksEfficiency(@PathVariable String email) {
+        return taskService.getTasksEfficiency(email);
+    }
     
 
 }

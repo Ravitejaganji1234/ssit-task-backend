@@ -145,4 +145,21 @@ public class TaskJpaService implements TaskRepository {
       return taskRepository.allCompletedTasksPersonEmail(email);
     }
 
+    @Override 
+
+    public HashMap<String,Integer> getTasksEfficiency(String email){
+      int overDueTasks=taskRepository.allOverDueTasksPersonEmail(email).size();
+      int pendingTasks=taskRepository.allPendingTasksPersonEmail(email).size();
+      int completedTasks=taskRepository.allCompletedTasksPersonEmail(email).size();
+      int totalTasks=overDueTasks+pendingTasks+completedTasks;
+      double tasksEfficiency=(double) completedTasks/totalTasks*100;
+      HashMap<String, Integer>tasksDetails = new HashMap<>();
+      tasksDetails.put("overDueTasks",overDueTasks);
+      tasksDetails.put("pendingTasks",pendingTasks);
+      tasksDetails.put("completedTasks",completedTasks);
+      tasksDetails.put("tasksEfficiency",(int) tasksEfficiency);
+      return tasksDetails;
+
+    }
+
 }

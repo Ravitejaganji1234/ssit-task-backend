@@ -13,7 +13,7 @@ import com.example.task.model.*;
 
   @RestController
 //comment
-  @CrossOrigin("http://localhost:3000/")
+  @CrossOrigin("https://talebts-frontend.azurewebsites.net")
   @RequestMapping("apis/employees")
 public class TaskController {
     @Autowired 

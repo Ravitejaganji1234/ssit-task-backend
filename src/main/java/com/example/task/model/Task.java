@@ -11,6 +11,8 @@ public class Task {
  @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name="taskid")
     int taskId;
+    @Column (name="taskAssignedPersonName")
+    String taskAssignedPersonName;
     @Column (name="taskAssignedFrom")
     String taskAssignedFrom;
     @Column(name="personName")
@@ -50,6 +52,14 @@ public class Task {
 
     public void setTaskId(int taskId){
         this.taskId=taskId;
+    }
+
+    public String getTaskAssignedPersonName(){
+        return taskAssignedPersonName;
+    }
+
+    public void setTaskAssignedPersonName(String taskAssignedPersonName){
+        this.taskAssignedPersonName=taskAssignedPersonName;
     }
 
     public String getTaskAssignedFrom(){
